@@ -1,0 +1,21 @@
+import requests
+
+
+print('######################')
+print('### Consultar CNPJ ###')
+print('######################')
+print()
+
+
+
+CNPJ_input = input(' digite seu CNPJ para consultar sua informações: ')
+
+
+if len(CNPJ_input) !=14:
+    print('Quantidades de digitos invalida')
+    exit()
+
+request = requests.get('https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/Cnpjreva_Solicitacao.asp'.format(CNPJ_input))
+
+
+print(resquest.json())
